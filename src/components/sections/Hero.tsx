@@ -29,7 +29,7 @@ const Hero = () => {
   }, []);
   return (
     <section className="bg-black">
-      <div className="h-[calc(100vh-60px)] container gap-4 mx-auto p-8 flex items-center justify-center flex-col">
+      <div className="h-[calc(100dvh-60px)] container gap-4 mx-auto p-8 flex items-center justify-center flex-col">
         <div className="w-9/12">
           <video autoPlay muted loop playsInline preload="auto">
             <source src={videoSrc} type="video/mp4" />

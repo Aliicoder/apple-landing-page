@@ -30,6 +30,7 @@ const HowItWorks = () => {
         y: 0,
         duration: 1,
         ease: "power2.inOut",
+        toggleActions: "play pause none none",
       },
       {}
     );

@@ -2,17 +2,29 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import cn from "../../utils/cn";
 import { rightImg, watchImg } from "../../utils";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 const Higlights = () => {
   useGSAP(() => {
     gsap.to("#highlights-title", {
       opacity: 1,
       duration: 1,
       y: 0,
+      scrollTrigger: {
+        trigger: "#highlights-title",
+        start: "top 80%",
+        toggleActions: "play pause none none",
+      },
     });
     gsap.to("#highlights-link", {
       opacity: 1,
       duration: 1,
       y: 0,
+      scrollTrigger: {
+        trigger: "#highlights-link",
+        start: "top 80%",
+        toggleActions: "play pause none none",
+      },
     });
   });
   return (

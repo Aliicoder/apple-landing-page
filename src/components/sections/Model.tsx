@@ -8,6 +8,8 @@ const Model = () => {
       opacity: 1,
       duration: 1,
       y: 0,
+      ease: "power2.inOut",
+      toggleActions: "play pause none none",
     });
   });
   return (
