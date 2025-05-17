@@ -10,6 +10,7 @@ const Hero = () => {
     gsap.to("#cta", {
       opacity: 1,
       duration: 1,
+      ease: "power1.inOut",
       y: 0,
     });
   });
@@ -30,7 +31,7 @@ const Hero = () => {
     <section className="bg-black">
       <div className="h-[calc(100vh-60px)] container gap-4 mx-auto p-8 flex items-center justify-center flex-col">
         <div className="w-9/12">
-          <video autoPlay muted loop playsInline>
+          <video autoPlay muted loop playsInline preload="auto">
             <source src={videoSrc} type="video/mp4" />
           </video>
         </div>

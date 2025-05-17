@@ -42,7 +42,13 @@ const HowItWorks = () => {
           id="chip"
           className="flex justify-center items-center w-full my-20"
         >
-          <img src={chipImg} alt="chip" width={180} height={180} />
+          <img
+            src={chipImg}
+            alt="chip"
+            width={180}
+            height={180}
+            loading="lazy"
+          />
         </div>
 
         <div className="flex flex-col items-center">
@@ -61,6 +67,7 @@ const HowItWorks = () => {
             <div className="relative overflow-hidden ">
               <img
                 src={frameImg}
+                loading="lazy"
                 alt="frame"
                 className="w-full h-full bg-transparent relative z-10"
               />

@@ -49,6 +49,7 @@ const Higlights = () => {
               watch the film
               <img
                 className="translate-y-0.5 w-3 h-3"
+                loading="lazy"
                 src={watchImg}
                 alt="watchImg"
               />
@@ -61,7 +62,12 @@ const Higlights = () => {
               )}
             >
               the event
-              <img className=" w-2 h-2" src={rightImg} alt="watchImg" />
+              <img
+                className=" w-2 h-2"
+                loading="lazy"
+                src={rightImg}
+                alt="watchImg"
+              />
             </p>
           </div>
         </div>

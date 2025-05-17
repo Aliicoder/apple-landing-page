@@ -75,6 +75,7 @@ const Features = () => {
                   <img
                     src={explore1Img}
                     alt="titanium"
+                    loading="lazy"
                     className="g_grow w-full h-full object-cover object-center scale-150 opacity-0"
                   />
                 </div>
@@ -82,6 +83,7 @@ const Features = () => {
                   <img
                     src={explore2Img}
                     alt="titanium 2"
+                    loading="lazy"
                     className="g_grow w-full h-full object-cover object-center scale-150 opacity-0"
                   />
                 </div>
