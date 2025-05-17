@@ -15,7 +15,6 @@ const HowItWorks = () => {
       scrollTrigger: {
         trigger: "#chip",
         start: "20% bottom",
-        toggleActions: "play pause none none",
       },
       opacity: 0,
       scale: 2,
@@ -30,7 +29,6 @@ const HowItWorks = () => {
         y: 0,
         duration: 1,
         ease: "power2.inOut",
-        toggleActions: "play pause none none",
       },
       {}
     );

@@ -48,7 +48,20 @@ const Features = () => {
           Explore the full story.
         </h1>
 
-        <div className="mt-24 flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center">
+          <div className="mt-8 p-24 max-md:p-10">
+            <h2
+              className={cn(
+                "text-4xl text-gray font-semibold",
+                "max-md:text-2xl"
+              )}
+            >
+              iPhone.
+            </h2>
+            <h2 className={cn("text-6xl font-semibold", "max-md:text-4xl")}>
+              Forged in titanium.
+            </h2>
+          </div>
           <div className="flex-center flex-col sm:px-10">
             <div className="h-[50vh] w-full flex items-center">
               <video

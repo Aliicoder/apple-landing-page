@@ -29,7 +29,7 @@ const Hero = () => {
   }, []);
   return (
     <section className="bg-black">
-      <div className="h-[calc(100dvh-60px)] container gap-4 mx-auto p-8 flex items-center justify-center flex-col">
+      <div className="h-[calc(100dvh-60px)] container mx-auto p-8 flex items-center justify-center flex-col">
         <div className="w-9/12">
           <video autoPlay muted loop playsInline preload="auto">
             <source src={videoSrc} type="video/mp4" />
@@ -37,7 +37,7 @@ const Hero = () => {
         </div>
         <div
           id="cta"
-          className="flex flex-col items-center max-md:mt-12  w-9/12 opacity-0 translate-y-50"
+          className="p-8 flex flex-col items-center max-md:mt-12  w-9/12 opacity-0 translate-y-50"
         >
           <a
             className=" px-5 py-2 rounded-3xl bg-blue my-5 hover:bg-transparent border border-transparent hover:border hover:text-blue hover:border-blue"
