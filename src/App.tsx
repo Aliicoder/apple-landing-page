@@ -8,7 +8,7 @@ const Model = lazy(() => import("./components/sections/Model"));
 const Footer = lazy(() => import("./components/sections/Footer"));
 const App = () => {
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <Navbar />
       <Hero />
       <Higlights />
