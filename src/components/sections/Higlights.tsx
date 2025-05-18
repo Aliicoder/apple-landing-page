@@ -2,8 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import cn from "../../utils/cn";
 import { rightImg, watchImg } from "../../utils";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import VideoCarousel from "../VideoCarousel";
 const Higlights = () => {
   useGSAP(() => {
     gsap.to("#highlights-title", {
@@ -28,8 +27,8 @@ const Higlights = () => {
     });
   });
   return (
-    <section id="highlights" className=" bg-zinc">
-      <div className="container gap-4 mx-auto p-8 flex items-center justify-center flex-col">
+    <section id="highlights" className=" bg-zinc overflow-x-hidden">
+      <div className="container gap-8 mx-auto p-8 flex flex-col">
         <div
           className={cn(
             "w-full flex flex-col justify-between gap-4",
@@ -83,6 +82,7 @@ const Higlights = () => {
             </p>
           </div>
         </div>
+        <VideoCarousel />
       </div>
     </section>
   );

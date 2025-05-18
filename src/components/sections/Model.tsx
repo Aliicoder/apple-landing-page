@@ -13,7 +13,7 @@ const Model = () => {
     });
   });
   return (
-    <section className="bg-black">
+    <section className="bg-black overflow-x-hidden">
       <div className="container gap-4 mx-auto p-8 flex flex-col">
         <h1
           id="model-title"

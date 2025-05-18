@@ -8,16 +8,17 @@ interface Props {
   secondTarget: any;
   animationProps: any;
 }
-
 export const animateWithGsap = (
   target: any,
   animationProps: any,
-  scrollProps: any
+  scrollProps: any,
+  toggleActions?: string
 ) => {
   gsap.to(target, {
     ...animationProps,
     scrollTrigger: {
       trigger: target,
+      ...(toggleActions && { toggleActions }),
       start: "top 85%",
       ...scrollProps,
     },

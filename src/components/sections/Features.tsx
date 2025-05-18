@@ -26,17 +26,19 @@ const Features = () => {
     animateWithGsap(
       ".g_grow",
       { scale: 1, opacity: 1, ease: "power1" },
-      { scrub: 5.5 }
+      { scrub: 5.5 },
+      "restart reverse restart reverse"
     );
     animateWithGsap(
       ".g_text",
       { y: 0, opacity: 1, ease: "power2.inOut", duration: 1 },
-      {}
+      {},
+      "restart reverse restart reverse"
     );
   }, []);
 
   return (
-    <section className=" bg-zinc">
+    <section className=" bg-zinc overflow-x-hidden">
       <div className="px-8 py-16 gap-4 mx-auto container flex flex-col">
         <h1
           id="features_title"

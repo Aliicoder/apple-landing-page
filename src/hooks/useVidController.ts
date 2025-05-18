@@ -3,6 +3,8 @@ import type { IVidController } from "../types";
 import { hightlightsSlides } from "../constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 
 export default () => {
   const videoRef = useRef<HTMLVideoElement[]>([]);
@@ -23,7 +25,9 @@ export default () => {
   const handleController = (type: string, i?: number) => {
     switch (type) {
       case "video-end":
-        setCurrentVideo((pre) => ({ ...pre, isEnd: true, videoId: i! + 1 }));
+        if (i || i === 0) {
+          setCurrentVideo((pre) => ({ ...pre, isEnded: true, videoId: i + 1 }));
+        }
         break;
 
       case "video-last":
@@ -126,10 +130,17 @@ export default () => {
       if (!isPlaying) {
         videoRef.current[videoId].pause();
       } else {
-        isStarted && videoRef.current[videoId].play();
+        isStarted &&
+          videoRef.current[videoId]
+            ?.play()
+            .catch((e) => console.error("Video play failed:", e));
       }
     }
   }, [isStarted, videoId, isPlaying, loadedData]);
+
+  useEffect(() => {
+    console.log("currentVideo ", currentVideo);
+  }, [currentVideo]);
 
   return {
     videoRef,

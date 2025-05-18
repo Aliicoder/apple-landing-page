@@ -1,10 +1,7 @@
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
-gsap.registerPlugin(ScrollTrigger);
-
 import { hightlightsSlides } from "../constants";
 import { pauseImg, playImg, replayImg } from "../utils";
 import useVidController from "../hooks/useVidController";
+import cn from "../utils/cn";
 
 const VideoCarousel = () => {
   const {
@@ -24,7 +21,7 @@ const VideoCarousel = () => {
         {hightlightsSlides.map((list, i) => (
           <div key={list.id} id="slider" className="sm:pr-20 pr-10">
             <div className="relative sm:w-[70vw] w-[88vw] md:h-[70vh] sm:h-[50vh] h-[35vh]">
-              <div className="w-full h-full flex-center rounded-3xl overflow-hidden bg-black">
+              <div className="w-full h-full flex justify-center items-center rounded-3xl overflow-hidden bg-black">
                 <video
                   id="video"
                   playsInline={true}
@@ -38,7 +35,7 @@ const VideoCarousel = () => {
                   }}
                   onEnded={() =>
                     i !== 3
-                      ? handleController("video-end")
+                      ? handleController("video-end", i)
                       : handleController("video-last")
                   }
                   onPlay={() =>
@@ -54,7 +51,14 @@ const VideoCarousel = () => {
 
               <div className="absolute top-12 left-[5%] z-10">
                 {list.textLists.map((text, i) => (
-                  <p key={i} className="md:text-2xl text-xl font-medium">
+                  <p
+                    key={i}
+                    className={cn(
+                      "text-xl font-medium",
+                      "  md:text-2xl",
+                      i == 0 && "text-gray"
+                    )}
+                  >
                     {text}
                   </p>
                 ))}
@@ -64,8 +68,8 @@ const VideoCarousel = () => {
         ))}
       </div>
 
-      <div className="relative flex-center mt-10">
-        <div className="flex-center py-5 px-7 bg-gray-300 backdrop-blur rounded-full">
+      <div className="relative gap-4 flex justify-center items-center mt-10">
+        <div className="flex justify-center items-center py-5 px-7 bg-gray-300 backdrop-blur rounded-full">
           {loadedData.length > 3 &&
             videoRef.current.map((_, i) => (
               <div
@@ -85,7 +89,7 @@ const VideoCarousel = () => {
             ))}
         </div>
 
-        <button className="control-btn">
+        <button>
           <img
             src={
               currentVideo.isLastVideo

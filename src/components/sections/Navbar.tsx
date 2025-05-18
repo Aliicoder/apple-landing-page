@@ -3,7 +3,7 @@ import { appleImg, bagImg, searchImg } from "../../utils";
 import cn from "../../utils/cn";
 const Navbar = () => {
   return (
-    <section className="bg-black">
+    <section className="bg-black overflow-x-hidden">
       <header className="mx-auto p-8 container flex justify-between items-center">
         <img width={20} height={17} src={appleImg} alt="apple-logo" />
         <ul className={cn("flex gap-4", "max-md:hidden")}>

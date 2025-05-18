@@ -3,7 +3,7 @@ import cn from "../../utils/cn";
 
 const Footer = () => {
   return (
-    <footer className="bg-black">
+    <footer className="bg-black overflow-x-hidden">
       <div
         className={cn(
           "px-8 py-16 gap-4 mx-auto container flex",

@@ -35,7 +35,7 @@ const HowItWorks = () => {
   }, []);
 
   return (
-    <section className="bg-black">
+    <section className="bg-black ">
       <div className="px-8 py-16 gap-4 mx-auto container flex flex-col">
         <div
           id="chip"
